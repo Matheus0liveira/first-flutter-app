@@ -25,12 +25,6 @@ class HomePageState extends State<HomePage> {
     });
   }
 
-  // _changeTheme(bool theme) {
-  //   setState(() {
-  //     isDarkTheme = theme;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,8 +32,37 @@ class HomePageState extends State<HomePage> {
         title: const Text('Home Page'),
         actions: [CustomSwitch()],
       ),
-      body: Center(
-        child: CustomSwitch(),
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Count: $count"),
+            CustomSwitch(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+              ],
+            )
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
