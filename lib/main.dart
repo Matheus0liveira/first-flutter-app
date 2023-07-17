@@ -15,14 +15,19 @@ class AddWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          title,
-          textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.red),
-        ),
-      ),
-    );
+    return MaterialApp(
+        theme: ThemeData.light(),
+        home: Container(
+          child: Center(child: Text('Hello World')),
+        ));
+    // return Container(
+    //   child: Center(
+    //     child: Text(
+    //       title,
+    //       textDirection: TextDirection.ltr,
+    //       style: TextStyle(color: Colors.red),
+    //     ),
+    //   ),
+    // );
   }
 }
