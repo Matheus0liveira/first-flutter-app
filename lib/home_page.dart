@@ -29,15 +29,13 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: Center(
-          child: GestureDetector(
-              child: Text(
-                "$title - $count",
-                style: const TextStyle(fontSize: 24),
-              ),
-              onTap: () {
-                _incrementCount();
-              })),
+      body: Container(
+          height: 200,
+          width: 200,
+          color: Colors.green,
+          child: Center(
+            child: Container(height: 100, width: 100, color: Colors.red),
+          )),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
