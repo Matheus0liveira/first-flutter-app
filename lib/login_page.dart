@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -49,7 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (emailForm == 'matheus@mail.com' &&
                             passwordForm == '123') {
-                          print('SHOW DE BOLA');
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage(
+                                      title: 'Olha o novo titulo ai')));
                         }
                       },
                       child: const Text('Entrar'),
