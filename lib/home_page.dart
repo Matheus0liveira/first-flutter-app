@@ -6,6 +6,7 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() {
+    // ignore: no_logic_in_create_state
     return HomePageState(title: title);
   }
 }
@@ -16,15 +17,32 @@ class HomePageState extends State<HomePage> {
 
   HomePageState({required this.title});
 
+  _incrementCount() {
+    setState(() {
+      count++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: GestureDetector(
-            child: Text("$title - $count"),
-            onTap: () {
-              setState(() {
-                count++;
-              });
-            }));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Center(
+          child: GestureDetector(
+              child: Text(
+                "$title - $count",
+                style: const TextStyle(fontSize: 24),
+              ),
+              onTap: () {
+                _incrementCount();
+              })),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            _incrementCount();
+          }),
+    );
   }
 }

@@ -9,6 +9,6 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData.light(), home: HomePage(title: "Clicked"));
+        theme: ThemeData.dark(), home: HomePage(title: "Clicked"));
   }
 }
