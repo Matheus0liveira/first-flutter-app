@@ -50,10 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPressed: () {
                         if (emailForm == 'matheus@mail.com' &&
                             passwordForm == '123') {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (context) => const HomePage(
-                                      title: 'Olha o novo titulo ai')));
+                          Navigator.of(context).pushReplacementNamed('/home');
                         }
                       },
                       child: const Text('Entrar'),
