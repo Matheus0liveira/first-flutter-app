@@ -4,8 +4,8 @@ class AppController extends ChangeNotifier {
   static AppController instance = AppController();
 
   bool isDarkTheme = false;
-  changeTheme(bool theme) {
-    isDarkTheme = theme;
+  changeTheme() {
+    isDarkTheme = !isDarkTheme;
     notifyListeners();
   }
 }

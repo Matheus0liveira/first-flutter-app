@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/app_controller.dart';
+import 'package:hello_world/components/customSwitch.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -36,16 +36,11 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
+        actions: [CustomSwitch()],
       ),
-      body: AnimatedBuilder(
-          animation: AppController.instance,
-          builder: (context, child) {
-            return Center(
-              child: Switch(
-                  value: AppController.instance.isDarkTheme,
-                  onChanged: AppController.instance.changeTheme),
-            );
-          }),
+      body: Center(
+        child: CustomSwitch(),
+      ),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
