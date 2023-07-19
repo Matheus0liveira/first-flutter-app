@@ -28,6 +28,37 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 16, bottom: 16),
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: Image.network(
+                    'https://avatars.githubusercontent.com/u/58826355?v=4'),
+                accountName: const Text('Matheus Oliveira Santos'),
+                accountEmail: const Text('matheus@mail.com'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text('Inicio'),
+                subtitle: const Text('Tela de inicio'),
+                onTap: () {
+                  print('OPA');
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('Sair'),
+                subtitle: const Text('Fazer loggout'),
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed('/');
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [CustomSwitch()],
@@ -39,33 +70,33 @@ class HomePageState extends State<HomePage> {
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Text("Count: $count"),
-            CustomSwitch(),
+            const CustomSwitch(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
