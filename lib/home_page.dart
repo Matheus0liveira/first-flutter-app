@@ -34,8 +34,10 @@ class HomePageState extends State<HomePage> {
           child: Column(
             children: [
               UserAccountsDrawerHeader(
-                currentAccountPicture: Image.network(
-                    'https://avatars.githubusercontent.com/u/58826355?v=4'),
+                currentAccountPicture: ClipOval(
+                  child: Image.network(
+                      'https://avatars.githubusercontent.com/u/58826355?v=4'),
+                ),
                 accountName: const Text('Matheus Oliveira Santos'),
                 accountEmail: const Text('matheus@mail.com'),
               ),
