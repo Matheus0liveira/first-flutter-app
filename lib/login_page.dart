@@ -28,37 +28,53 @@ class _LoginPageState extends State<LoginPage> {
                     child: Image.asset('assets/images/logo.png'),
                   ),
                   const SizedBox(height: 40),
-                  TextField(
-                    onChanged: (text) {
-                      emailForm = text;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: const InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 24, top: 24),
+                      child: Column(children: [
+                        TextField(
+                          onChanged: (text) {
+                            emailForm = text;
+                          },
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                            labelText: "Email",
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        TextField(
+                          onChanged: (text) {
+                            passwordForm = text;
+                          },
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            labelText: "Password",
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+                        ElevatedButton(
+                          onPressed: () {
+                            if (emailForm == 'matheus@mail.com' &&
+                                passwordForm == '123') {
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/home');
+                            }
+                          },
+                          child: const SizedBox(
+                            width: double.infinity,
+                            child: Text(
+                              'Entrar',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                          ),
+                        )
+                      ]),
                     ),
                   ),
-                  const SizedBox(height: 16),
-                  TextField(
-                    onChanged: (text) {
-                      passwordForm = text;
-                    },
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (emailForm == 'matheus@mail.com' &&
-                          passwordForm == '123') {
-                        Navigator.of(context).pushReplacementNamed('/home');
-                      }
-                    },
-                    child: const Text('Entrar'),
-                  )
                 ],
               ),
             )));
